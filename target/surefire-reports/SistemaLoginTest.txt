@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: SistemaLoginTest
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.131 s <<< FAILURE! - in SistemaLoginTest
+registrarUsuarioSinDatos  Time elapsed: 0.015 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Usuario sn nombre ni contraseña registrado ==> expected: <null> but was: <,>
+	at SistemaLoginTest.registrarUsuarioSinDatos(SistemaLoginTest.java:44)
+
+registrarUsuarioSinPassword  Time elapsed: 0.013 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Usuario sin contraseña registrado ==> expected: <null> but was: <usuario,>
+	at SistemaLoginTest.registrarUsuarioSinPassword(SistemaLoginTest.java:32)
+
+registrarUsuarioSinNombre  Time elapsed: 0.014 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Usuario sin nombre registrado ==> expected: <null> but was: <,123>
+	at SistemaLoginTest.registrarUsuarioSinNombre(SistemaLoginTest.java:38)
+
