@@ -31,12 +31,16 @@ parezca a uno hecho en papel.
 ## GitFlow
 ![image](https://github.com/user-attachments/assets/8c8c9823-2852-47f9-af34-31cc15053529)
 
+## Branches de GitFlow
+![image](https://github.com/user-attachments/assets/dd48bdd0-8349-4960-8cff-a9ed2c376293)
+
 ## rulesets para las ramas principales
 ![image](https://github.com/user-attachments/assets/cc556909-c7e3-47d4-8460-6c2afff026d3)
 
 ## Integración de github con Slack
 ![image](https://github.com/user-attachments/assets/799a6c52-8fab-41ef-9069-fc1e5bf3d470)
 
+Se decidió utilizar gitflow por su capacidad de dividir las distintas etapas del proyecto en diferentes ramas y aportar un mayor orden al desarrollo en equipo.
 
 # Problemas encontrados y como se solucionaron.
 
