@@ -126,6 +126,7 @@ public class App {
         String descripcion = scanner.nextLine();
 
         LocalDate fechaVencimiento = null;
+        
         while (fechaVencimiento == null) {
             System.out.print("Fecha de vencimiento (dd-MM-yyyy): ");
             String fechaInput = scanner.nextLine();
@@ -135,7 +136,7 @@ public class App {
             } catch (DateTimeParseException e) {
                 System.out.println("Formato de fecha incorrecto. Inténtalo de nuevo.");
                 logger.error("Formato de fecha incorrecto: {}", fechaInput, e);
-            }
+            };
         }
 
         System.out.print("Etiquetas (separadas por comas): ");
@@ -145,6 +146,7 @@ public class App {
                 etiquetas.add(etiqueta.trim());
             }
         }
+        
         planes.agregarTarea(dia, titulo, descripcion, fechaVencimiento, etiquetas);
         logger.info("Tarea agregada: Título '{}', Día '{}'", titulo, dia);
     }

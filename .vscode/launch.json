@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "java",
+        "name": "Launch Tests",
+        "request": "launch",
+        "mainClass": "org.junit.platform.console.ConsoleLauncher",
+        "args": [
+          "-cp",
+          "target/test-classes;target/classes",
+          "--select-package",
+          "com.yourpackage" // Replace with your test package
+        ],
+        "cwd": "${workspaceFolder}",
+        "console": "integratedTerminal",
+        "internalConsoleOptions": "openOnSessionStart"
+      }
+    ]
+  }
+  
