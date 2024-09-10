@@ -1,0 +1,22 @@
+/*{
+    "java.home": "/usr/lib/jvm/default-java",
+    "maven.executable.path": "/usr/bin/mvn"
+}*/
+{
+    "java.test.config": {
+      "name": "Maven-JUnit Test Configuration",
+      "workingDirectory": "${workspaceFolder}",
+      "args": []
+    },
+    "java.test.report.showAfterExecution": "onFailure",
+    "java.debug.settings.forceBuildBeforeLaunch": true,
+    "java.configuration.runtimes": [
+
+      {
+        "name": "JavaSE-17",
+        "path": "/usr/lib/jvm/java-17-openjdk-amd64",
+        "default": true
+      }
+    ],
+    "java.test.workingDirectory": "${workspaceFolder}/target/test-classes"
+  }
