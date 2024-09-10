@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: PlanesTest
--------------------------------------------------------------------------------
-Tests run: 6, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.928 s <<< FAILURE! - in PlanesTest
-AgregarTareaSinFechaV  Time elapsed: 1.8 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: Se lanzo una exepción ante una fecha invalida
-	at PlanesTest.AgregarTareaSinFechaV(PlanesTest.java:62)
-

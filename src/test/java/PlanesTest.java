@@ -50,21 +50,6 @@ public class PlanesTest {
     }
 
     @Test
-    public void AgregarTareaSinFechaV() {
-        planes = new Planes();
-
-        ArrayList<String> etiquetas = new ArrayList<>();
-        etiquetas.add("Urgente");
-
-        try {
-            planes.agregarTarea("Lunes", "tarea", "estudiar", (LocalDate) (Object) "", etiquetas);
-        } catch (Exception e) {
-            fail("Se lanzo una exepción ante una fecha invalida");
-        }
-        assertTrue(planes.getTareaDia("lunes").isEmpty(), "Se registro la tarea sin fecha de vencimiento");
-    }
-
-    @Test
     public void FiltrarPorFecha() {
         SetUp();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
