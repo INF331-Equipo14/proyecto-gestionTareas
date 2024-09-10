@@ -12,7 +12,7 @@ test:
 	$(MVN) test
 
 # Regla para ejecutar la aplicación principal
-run:
+run: build
 	$(MVN) exec:java -Dexec.mainClass=App
 
 # Regla para limpiar los artefactos de construcción
