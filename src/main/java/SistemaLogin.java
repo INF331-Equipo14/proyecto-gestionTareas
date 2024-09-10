@@ -37,6 +37,12 @@ public class SistemaLogin {
         if (buscarUsuario(nombreUsuario) != null) {
             System.out.println("El usuario ya existe.");
             return false;
+        }else if(contrasena.isEmpty()){
+            System.out.println("Contraseña invalida.");
+            return false;
+        }else if(nombreUsuario.isEmpty()){
+            System.out.println("Nombre de usuario invalido.");
+            return false;
         }
         Usuario nuevoUsuario = new Usuario(nombreUsuario, contrasena);
         usuarios.add(nuevoUsuario);
@@ -55,12 +61,30 @@ public class SistemaLogin {
         return false;
     }
 
-    private Usuario buscarUsuario(String nombreUsuario) {
+    public Usuario buscarUsuario(String nombreUsuario) {
         for (Usuario usuario : usuarios) {
             if (usuario.getNombreUsuario().equals(nombreUsuario)) {
                 return usuario;
             }
         }
         return null;
+    }
+
+    public boolean eliminarUsuario(String nombreUsuario) {
+        Usuario usuarioAEliminar = buscarUsuario(nombreUsuario);
+        if (usuarioAEliminar != null) {
+            usuarios.remove(usuarioAEliminar);
+            try (BufferedWriter bw = new BufferedWriter(new FileWriter(ARCHIVO_USUARIOS))) {
+                for (Usuario usuario : usuarios) {
+                    bw.write(usuario.toString());
+                    bw.newLine();
+                }
+            } catch (IOException e) {
+                System.out.println("Error al actualizar el archivo de usuarios: " + e.getMessage());
+            }
+            return true;
+        } else {
+            return false;
+        }
     }
 }

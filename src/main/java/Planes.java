@@ -17,8 +17,21 @@ public class Planes {
     private ArrayList<Tarea> tareasViernes = new ArrayList<>();
     private ArrayList<Tarea> tareasArchivadas = new ArrayList<>(); // Lista para tareas archivadas
 
+    public List<Tarea> getTareaDia(String dia){
+        List<Tarea> lista = switch(dia) {
+            case "lunes" -> tareasLunes;
+            case "martes" -> tareasMartes;
+            case "miercoles" -> tareasMiercoles;
+            case "jueves" -> tareasJueves;
+            case "viernes" -> tareasViernes;
+            default -> null;
+        };
+
+        return lista;
+    }
     // Método para agregar una tarea
     public void agregarTarea(String dia, String titulo, String descripcion, LocalDate fechaVencimiento, ArrayList<String> etiquetas) {
+        
         Tarea tarea = new Tarea(titulo, descripcion, fechaVencimiento, etiquetas, dia);
         switch (dia.toLowerCase()) {
             case "lunes":
@@ -230,7 +243,7 @@ public class Planes {
     }
 
     // Method to find a task by ID in the weekly tasks lists
-    private Tarea encontrarTareaEnSemanal(int ID) {
+    public Tarea encontrarTareaEnSemanal(int ID) {
         return Stream.of(tareasLunes, tareasMartes, tareasMiercoles, tareasJueves, tareasViernes)
                 .flatMap(List::stream)
                 .filter(t -> t.getId() == ID)
@@ -298,14 +311,14 @@ public class Planes {
     }
 
     // Filtrar tareas por fecha
-    private List<Tarea> filtrarPorFecha(LocalDate fecha, List<Tarea> tareas) {
+    public List<Tarea> filtrarPorFecha(LocalDate fecha, List<Tarea> tareas) {
         return tareas.stream()
                 .filter(tarea -> tarea.getFechaVencimiento().isEqual(fecha))
                 .collect(Collectors.toList());
     }
 
     // Método para filtrar tareas por estado
-    public void filtrarPorEstado(Tarea.EstadoTarea estado) {
+    public List<Tarea> filtrarPorEstado(Tarea.EstadoTarea estado) {
         logger.info("Filtrando tareas por estado: " + estado);
     
         // Filtrar tareas de cada día y las archivadas por estado
@@ -326,6 +339,8 @@ public class Planes {
             System.out.println("-----+--------------------------------+--------------------------------+------------+-------------+-------------------");
             mostrarTareasPorLista(tareasFiltradas);
         }
+
+        return tareasFiltradas;
     }
 
 // Filtrar tareas por estado y eliminar duplicados
@@ -372,7 +387,7 @@ private List<Tarea> filtrarYEliminarDuplicados(List<Tarea> tareas, Tarea.EstadoT
     }
 
     // Filtrar tareas por etiqueta
-    private List<Tarea> filtrarPorEtiqueta(String etiqueta, List<Tarea> tareas) {
+    public List<Tarea> filtrarPorEtiqueta(String etiqueta, List<Tarea> tareas) {
         return tareas.stream()
                 .filter(tarea -> tarea.getEtiquetas().contains(etiqueta))
                 .collect(Collectors.toList());
