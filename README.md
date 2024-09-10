@@ -1,6 +1,6 @@
 # proyecto-gestionTareas
 # Ejecución
-Para la correcta ejecucion del codigo es necesario tener maven instalado y Java 17
+Para la correcta ejecucion del codigo es necesario tener maven instalado y Java 17, ademas es preferible ejecutar el proyecto en un entorno de linux
 *Instalación de Maven en linux*
 sudo apt update
 sudo apt install maven
